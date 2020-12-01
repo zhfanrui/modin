@@ -135,7 +135,7 @@ def _update_engine(publisher: Parameter):
 
                 dask_client = Client(n_workers=CpuCount.get())
 
-            num_cpus = len(dask_client.nthreads())
+            num_cpus = len(dask_client.scheduler_info()['workers'])
 
     elif publisher.get() == "Cloudray":
         from modin.experimental.cloud import get_connection
