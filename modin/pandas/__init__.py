@@ -134,7 +134,7 @@ def _update_engine(publisher: Parameter):
                 from distributed import Client
 
                 dask_client = Client(n_workers=CpuCount.get())
-                
+
             num_cpus = len(dask_client.nthreads())
 
     elif publisher.get() == "Cloudray":
